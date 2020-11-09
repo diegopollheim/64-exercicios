@@ -1394,6 +1394,72 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 36
 #region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            
+            PegaNumeros(vetor);
+            EscreveVetor(vetor);
+            OrdenaVetor(vetor);
+            EscreveVetor(vetor);
+                         
+            Console.ReadKey();
+        }
+
+        private static void PegaNumeros(int[] vetor)
+        {
+            Random num = new Random();
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                //Console.Write($"{i}º: \n");
+                vetor[i] = num.Next(0,99);
+                //vetor[i] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        private static void EscreveVetor(int[] vetor)
+        {
+            string palavra = "VETOR";
+            if (vetor[0] < vetor[1])
+            {
+                palavra = "VETOR ORDENADO";
+            }
+            Console.WriteLine();
+            Console.Write($"{palavra}: ");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{vetor[i]}, ");
+            }
+        }
+
+        static void OrdenaVetor(int[] vetor)
+        {
+            for (var i = 1; i < vetor.Length; i++)
+            {
+                var aux = vetor[i];
+                var j = i - 1;
+
+                while (j >= 0 && vetor[j] > aux)
+                {
+                    vetor[j + 1] = vetor[j];
+                    j -= 1;
+                }
+                vetor[j + 1] = aux;
+            }
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 37
