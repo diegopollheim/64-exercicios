@@ -1472,8 +1472,81 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 39
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            //PegarValores(matriz);
+            //MostraMatriz(matriz);
+            Console.Write("Digite um numero de entre 5 e 10: ");
+            int numero = int.Parse(Console.ReadLine());
+
+            int[,] matriz = new int[numero, numero];
+            
+            MostraTrianguloPascal(matriz, numero);
+                                     
+            Console.ReadKey();
+        }
+
+        static void PegarValores(int[,] matriz)
+        {
+            Random numero = new Random();
+
+            for (int l = 0; l < 6; l++)
+            {
+                for (int c = 0; c < 6; c++)
+                {
+                    matriz[l, c] = numero.Next(0, 99);
+                }
+            }
+        }
+
+        static void MostraMatriz(int[,] matriz)
+        {
+            for (int l = 0; l < 6; l++)
+            {
+                for (int c = 0; c < 6; c++)
+                {
+                    Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
+        static void MostraTrianguloPascal(int[,] matriz, int numero)
+        {
+            for (int l = 0; l <= numero; l++)
+            {                
+                for (int c = 0; c <= numero; c++)
+                { 
+                    if (l >= c)
+                    {                      
+                        //int aux = l;
+                        //l = 1;
+                        Console.Write($" {l} ");
+                        //l = aux;                       
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+        }
+    }
+}
 #endRegion
 
-// EXERCICIO 40
+// MATRIZES 
+// EXERCICIO 01
 #region
 #endRegion
