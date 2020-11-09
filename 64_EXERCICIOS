@@ -1,0 +1,1404 @@
+// EXERCICIO 01
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] A = new int[] {1, 0, 5, -2, -5, 7};
+            int soma = A[0] + A[1] + A[5];
+
+            Console.WriteLine($"Soma dos numeros: {soma}");
+            A[4] = 100;
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                Console.WriteLine($"{i}º posição: {A[i]}");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 02
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] A = new int[6];
+            
+            for (int i = 0; i < A.Length; i++)
+            {
+                Console.Write($"{i + 1}º valor: ");
+                A[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("Valores Digitados");
+            for (int i = 0; i < A.Length; i++)
+            {
+                Console.WriteLine($"{i}º posição: {A[i]}");                
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 03
+#region
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int[] resultados = new int[10];
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i + 1}º valor: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                
+                resultados[i] = vetor[i] * vetor[i];
+            }
+            Console.Clear();
+
+            for (int i = 0; i < resultados.Length; i++)
+            {
+                Console.WriteLine($"{vetor[i]} * {vetor[i]} = {resultados[i]}");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 04
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] A = new int[8];
+            
+            for (int i = 0; i < A.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                A[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("Digite um numero entre 0 - 7");
+            int x = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Mais um numero entre 0 - 7");
+            int y = int.Parse(Console.ReadLine());
+
+            int soma = A[x] + A[y];
+
+            Console.WriteLine($"Soma entre os valores do vetor na posiçao {x} e {y} é: {soma}");
+            
+
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 05
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine($"\nValores pares digitados \n");
+            int pares = 0;
+            for (int i = 0; i < vetor.Length; i++)
+            {
+               if (vetor[i] % 2 == 0)
+                {
+                    Console.WriteLine($"Posição {i} : {vetor[i]}");
+                    pares++;
+                }
+            }
+            Console.WriteLine($"Ao todos são {pares} valores pares!");
+
+
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 06
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int maior = 0;
+            int menor = 0;
+                
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+
+                menor = vetor[i];
+            }
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] > maior)
+                {
+                    maior = vetor[i];
+                }
+                if (vetor[i] < menor)
+                {
+                    menor = vetor[i];
+                }
+            }
+            Console.WriteLine($"\nMaior valor: {maior}");
+            Console.WriteLine($"Menor valor: {menor}");
+            
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 07
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int maior = 0;
+            int posicao = 0;
+                
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                               
+            }
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] > maior)
+                {
+                    maior = vetor[i];
+                    posicao = i;
+                }
+            }
+            Console.WriteLine($"\nMaior valor é {maior} e está na posição {posicao}");
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 08
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[6];
+            
+                
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                               
+            }
+            Console.WriteLine();
+            for (int i = vetor.Length - 1; i >= 0; i--)
+            {
+                Console.WriteLine($"{i}º posição:  {vetor[i]}");                
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 09
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[6];
+            
+                
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                               
+            }
+            Console.WriteLine();
+            for (int i = vetor.Length - 1; i >= 0; i--)
+            {
+                if (vetor[i] % 2 == 0)
+                {
+                    Console.WriteLine($"{i}º posição:  {vetor[i]}");
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 10
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] notas = new double[15];
+            double media = 0;
+
+            for (int i = 0; i < notas.Length; i++)
+            {
+                Console.Write($"Nota {i + 1}º Aluno: ");
+                notas[i] = int.Parse(Console.ReadLine());
+                media += notas[i];
+            }
+
+            media = media / notas.Length; 
+            Console.WriteLine("A média geral dos alunos foi: {0}", media.ToString("n1"));
+            Console.ReadKey();
+        }
+    }
+}
+
+#endRegion
+
+// EXERCICIO 11
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int soma = 0;
+            int negativos = 0;
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+
+                if (vetor[i] >= 0)
+                {
+                    soma += vetor[i];
+                }
+                if (vetor[i] < 0)
+                {
+                    negativos++;
+                }
+            }
+            Console.WriteLine($"Soma dos numeros positivos é: {soma}.");
+            Console.WriteLine($"No seu vetor tem {negativos} números negativos.");
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 12
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[5];
+            int maior = 0;
+            int menor = 0;
+            double media = 0;
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                media += vetor[i];
+                menor = vetor[i];
+            }
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] > maior)
+                {
+                    maior = vetor[i];
+                }
+                if (vetor[i] < menor)
+                {
+                    menor = vetor[i];
+                }
+            }
+            Console.WriteLine($"\nMaior valor: {maior}");
+            Console.WriteLine($"Menor valor: {menor}");
+            Console.WriteLine($"Média dos valores: {media / vetor.Length}");
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 13
+#region
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[5];
+            int maior = 0;
+            int menor = 0;
+            int posMaior = 0;
+            int posMenor = 0;
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º posição: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+
+                menor = vetor[i];
+            }
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] > maior)
+                {
+                    maior = vetor[i];
+                    posMaior = i;
+                }
+                if (vetor[i] < menor)
+                {
+                    menor = vetor[i];
+                    posMenor = i;
+                }
+            }
+            Console.WriteLine($"\nMaior valor se encontra na {posMaior}º posição.");
+            Console.WriteLine($"\nMenor valor se encontra na {posMenor}º posição.");
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 14
+#region
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[5];
+            string[] iguais = new string[5];
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º vetor: ");
+                vetor[i] = int.Parse(Console.ReadLine());                               
+            }
+            //Console.Clear();
+
+            for (int l = 0; l < vetor.Length; l++)
+            {
+               for (int c = 0; c < vetor.Length; c++)
+                {
+                    if (vetor[l] == vetor[c] && l != c)
+                    {
+                        iguais[l] = $"Posição {l} = {c} ||  {vetor[l]} == {vetor[l]}";
+                    }
+                }
+            }
+
+            for (int i = 0; i < iguais.Length; i++)
+            {
+                if (iguais[i] != null)
+                {
+                    Console.WriteLine(iguais[i]);
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 15 
+#region
+using System;
+using System.Globalization;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+         {
+            int[] vetor = new int[20];
+            Random num = new Random();
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = num.Next(0,50);
+            }
+            Console.WriteLine("VETOR | SEM REPETIDOS");
+            Console.WriteLine("_____________________");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"  {vetor[i].ToString("0,#")}");
+                for (int l = i + 1; l < vetor.Length; l++)
+                {
+                    if (vetor[i] == vetor[l])
+                    {
+                        vetor[l] = 0;
+                    }
+                }
+                if (vetor[i] != 0)
+                {
+                    Console.Write($"        {vetor[i]}");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+#endregion
+
+// EXERCICIO 16
+#region
+using System;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool continuar = true;
+            int[] vetor = new int[20];
+
+            Console.WriteLine("DÊ VALORES AS POSIÇÕES DO VETOR");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º : ");
+                vetor[i] = int.Parse(Console.ReadLine());
+            }
+            
+            do {                
+                Console.Clear();
+                Console.WriteLine(" ===========MENU===========");
+                Console.WriteLine(" [1] MOSTRAR VETOR EM ORDEM");
+                Console.WriteLine(" [2] MOSTRAR VETOR INVERSO");
+                Console.WriteLine(" [0] SAIR");
+                int opcao = int.Parse(Console.ReadLine());
+
+                if (opcao != 1 && opcao != 2 && opcao != 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("OPÇÃO INVÁLIDA !");
+                    Console.WriteLine("APERTE UMA TECLA PARA CONTINUAR");
+                }
+
+                switch (opcao) {
+                   
+                    case 1:
+                        MostrarVetorEmOrdem(vetor);
+                        break;
+
+                    case 2:
+                        MostrarVetorOrdemInversa(vetor);
+                        break;
+
+                    case 0:
+                        continuar = false;
+                        Environment.Exit(-1);
+                        break;
+                }
+                Console.ReadKey();
+            } while (continuar);
+            
+        }
+
+        private static void MostrarVetorOrdemInversa(int[] vetor)
+        {
+            for (int i = vetor.Length - 1; i >= 0; i--)
+            {
+                Console.Write($"{vetor[i]} - ");
+            }
+            Console.WriteLine("\n APERTE UMA TECLA PARA CONTINUAR !");
+        }
+
+        private static void MostrarVetorEmOrdem(int[] vetor)
+        {
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{vetor[i]} - ");
+            }
+            Console.WriteLine("\n APERTE UMA TECLA PARA CONTINUAR !");
+        }
+    }
+}
+
+#endregion
+
+// EXERCICIO 17
+#region
+using System;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+
+            Console.WriteLine("DÊ VALORES AS POSIÇÕES DO VETOR");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º : ");
+                vetor[i] = int.Parse(Console.ReadLine());
+            }
+            
+            for(int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] < 0)
+                {
+                    vetor[i] = 0;
+                }
+                Console.Write($"{vetor[i]}, ");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+#endregion
+
+// EXERCICIO 18
+#region
+using System;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int[] vetorDeMultiplos = new int[10];
+
+            Console.WriteLine("DÊ VALORES AS POSIÇÕES DO VETOR");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º : ");
+                vetor[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("AGORA DIGITE UM NUMERO ALEATÓRIO");
+            int numeroAleatorio = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetorDeMultiplos[i] = numeroAleatorio * vetor[i];
+            }
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.WriteLine($"{numeroAleatorio} * {vetor[i]} = {vetorDeMultiplos[i]}");
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+#endregion
+
+// EXERCICIO 19  ???? CONFERIR SE É DESTA FORMA MESMO
+#region
+using System;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[50];
+            
+
+            Console.WriteLine("====================");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = (i + 5 * i) % (i + 1);
+            }
+           
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.WriteLine(vetor[i]);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+#endregion
+
+// EXERCICIO 20
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int[] vetorDeImpares = new int[10];
+            Random numero = new Random();
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = numero.Next(0, 50);
+            }
+
+            Console.WriteLine(" POS VETOR | IMPARES");
+            Console.WriteLine("------------------");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] % 2 != 0)
+                {
+                    vetorDeImpares[i] = vetor[i];
+                }           
+
+                Console.WriteLine($" {i}º   {vetor[i].ToString("0,0")}   |   {vetorDeImpares[i].ToString("#,#")}");
+
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+#endregion
+
+// EXERCICIO 21
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] A = new int[10];
+            int[] B = new int[10];
+            int[] C = new int[10];
+            Random aaa = new Random();
+
+            Console.WriteLine("DE OS VALORES DO VETOR [A] e [B]");
+            for (int i = 0; i < A.Length; i++)
+            {
+                //Console.Write($"A | {i}º: ");
+                //A[i] = int.Parse(Console.ReadLine());
+                A[i] = aaa.Next(0,99);
+
+                //Console.Write($"B | {i}º: ");
+                //B[i] = int.Parse(Console.ReadLine());
+                B[i] = aaa.Next(0,99);
+
+                C[i] = A[i] - B[i];
+            }
+            Console.Clear();
+
+            for (int i = 0; i < C.Length; i++)
+            {
+                Console.Write($"\n{A[i]} - {B[i]} = ");
+                Console.WriteLine(C[i]);
+            }     
+
+            Console.ReadKey();
+        }
+    }
+}
+#endregion
+
+// EXERCICIO 22  ??????? TENHO PROBLEMA COM O TAMANHO DO vetorC
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetorA = new int[10];
+            int[] vetorB = new int[10];
+            int[] vetorC = new int[20];
+
+            int indiceVetorA = 0;
+            int indiceVetorB = 0;
+
+            Random num = new Random();
+
+            Console.WriteLine("P | VA  |  VB");
+            Console.WriteLine("_____________");
+                        
+            for (int i = 0; i < vetorA.Length; i++)
+            {
+                vetorA[i] = num.Next(0, 99);
+                vetorB[i] = num.Next(0, 99);
+
+                Console.Write($"{i}º: {vetorA[i].ToString("0,0")}  |  {vetorB[i].ToString("0,0")}\n");
+            }
+
+            Console.WriteLine(" VETOR C");
+            Console.WriteLine("============");
+            for (int i = 0; i < vetorC.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    vetorC[i] = vetorA[indiceVetorA];
+                    indiceVetorA++;
+                }
+                if (i % 2 != 0)
+                {
+                    vetorC[i] = vetorB[indiceVetorB];
+                    indiceVetorB++;
+                }
+            }
+
+            for (int i = 0; i < vetorC.Length; i++)
+            {
+                Console.WriteLine($"{i}º {vetorC[i]}");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 23
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] A = new int[5];
+            int[] B = new int[5];
+            int escalar = 0;
+            string escalarEmString = "ESCALAR : ";
+            string vetor1 = "VETOR 1 : ";
+            string vetor2 = "VETOR 2 : ";
+
+            Random numero = new Random();
+
+            //Console.WriteLine("DE OS VALORES DO VETOR [A] e [B]");
+            for (int i = 0; i < A.Length; i++)
+            {
+                //Console.Write($"A | {i}º: ");
+                //A[i] = int.Parse(Console.ReadLine());
+                A[i] = numero.Next(0, 99);
+
+                //Console.Write($"B | {i}º: ");
+                //B[i] = int.Parse(Console.ReadLine());
+                B[i] = numero.Next(0, 99);
+
+                escalar += A[i] * B[i];
+                string simbSoma = "+";
+                string virgula = ",";
+
+                if (i == A.Length - 1)
+                {
+                    simbSoma = "";
+                    virgula = "";
+                }
+
+                vetor1 += $"{A[i]}{virgula} ";
+                vetor2 += $"{B[i]}{virgula} ";
+                escalarEmString += $"({A[i]} * {B[i]}) {simbSoma} ";
+            }
+            Console.Clear();
+
+            Console.WriteLine(vetor1);
+            Console.WriteLine(vetor2);
+            Console.WriteLine($"{escalarEmString}= {escalar}");
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 24
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] aluno = new int[10];
+            double[] altura = new double[10];
+
+            double maiorAltura = 0;
+            int maiorAluno = 0;
+
+            double menorAltura = 3;
+            int menorAluno = 0;
+
+            Random numero = new Random();
+
+            Console.WriteLine("P |  Nº | A");
+            Console.WriteLine("_____________");
+            for (int i = 0; i < aluno.Length; i++)
+            {
+                aluno[i] = numero.Next(0, 99);
+                altura[i] = numero.Next(1, 2) + numero.NextDouble();
+               
+                if (altura[i] > maiorAltura)
+                {
+                    maiorAluno = aluno[i];
+                    maiorAltura = altura[i];
+                }
+
+                if (altura[i] < menorAltura)
+                {
+                    menorAltura = altura[i];
+                    menorAluno = aluno[i];
+                }
+
+                Console.WriteLine($"{i}º: {aluno[i]}   {altura[i].ToString("n2")}");
+
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Aluno mais alto: Nº {maiorAluno} com {maiorAltura.ToString("n2")} mt.");
+            Console.WriteLine($"Aluno mais baixo: Nº {menorAluno} com {menorAltura.ToString("n2")} mt.");
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 25   ???? FALTA FAZER
+#region
+#endRegion
+
+// EXERCICIO 26   ???? FALTA FAZER
+#region
+#endRegion
+
+// EXERCICIO 27
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetorA = new int[10];
+            Random num = new Random();
+
+            for (int i = 0; i < vetorA.Length; i++)
+            {
+                vetorA[i] = num.Next(0, 99);
+                if (vetorA[i] % 1 == 0 && vetorA[i] % vetorA[i] == 0)
+                {
+                    Console.WriteLine($"{i}º: {vetorA[i]}");
+                }
+            }            
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 28
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[10];
+            int[] v1 = new int[10];
+            int[] v2 = new int[10];
+            Random num = new Random();
+
+            Console.WriteLine("Pos | Nº |Vetor");
+            Console.WriteLine("_______________");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = num.Next(0, 99);
+                if (vetor[i] % 2 != 0)
+                {
+                    v1[i] = vetor[i];
+                }
+
+                if (vetor[i] % 2 == 0)
+                {
+                    v2[i] = vetor[i];
+                }
+
+                if (v1[i] != 0)
+                {
+                    Console.Write($" {i}º   {v1[i]}   v1");
+                }
+                if (v2[i] != 0)
+                {
+                    Console.Write($" {i}º   {v2[i]}   v2");
+                } 
+                Console.WriteLine();
+            Console.WriteLine("_______________");
+            }     
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 29  CORRIGIR O PROBLEMA DA ULTIMA VIRGULA
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            int qtdImpares = 0;
+            int[] vetor = new int[6];
+            Random num = new Random();
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                vetor[i] = num.Next(0, 99);
+            }
+
+            EscreveVetor(vetor);
+            MostrarPares(vetor);
+            SomarPares(vetor);
+            qtdImpares = MostrarImpares(vetor, qtdImpares);
+            Console.WriteLine($"\nQuantidade de Impares: {qtdImpares}");
+            Console.ReadKey();
+        }
+
+        public static int MostrarImpares(int[] vetor, int qtdImpares)
+        {
+
+            Console.Write("Numeros Impares:");
+
+            string virgula = ",";
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (i == vetor.Length - 1)
+                {
+                    virgula = "";
+                }
+
+                if (vetor[i] % 2 != 0)
+                {
+                    Console.Write($"{vetor[i]}{virgula}");
+                    qtdImpares++;
+                }                
+            }
+            return qtdImpares;
+        }
+
+        private static void SomarPares(int[] vetor)
+        {
+            Console.WriteLine();
+            int soma = 0;
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (vetor[i] % 2 == 0)
+                {
+                    soma += vetor[i];
+                }
+            }
+
+            Console.WriteLine($"Soma dos números pares: {soma}");
+
+        }
+
+        private static void MostrarPares(int[] vetor)
+        {
+            Console.Write("Numeros Pares: ");
+
+            string virgula = ",";
+
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (i == vetor.Length - 1)
+                {
+                    virgula = "";
+                }
+
+                if (vetor[i] % 2 == 0)
+                {
+                    Console.Write($"{vetor[i]}{virgula}");
+                }                
+            }
+        }
+
+        private static void EscreveVetor(int[] vetor)
+        {
+            string virgula = ",";
+
+            Console.Write($"VETOR: ");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (i == vetor.Length - 1)
+                {
+                    virgula = "";
+                }
+                Console.Write($"{vetor[i]}{virgula}");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 30 ???? CORRIGIR O VETORC QUE COLOCA NUMEROS REPETIDOS
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetorA = new int[10];
+            int[] vetorB = new int[10];
+            int[] vetorC = new int[10];
+
+            Random num = new Random();
+            Console.WriteLine("P | VA  |  VB  |  VC");
+            Console.WriteLine("____________________");
+            for (int i = 0; i < vetorA.Length; i++)
+            {
+                vetorA[i] = num.Next(0, 50);
+                vetorB[i] = num.Next(0, 50);
+            }
+
+            for (int i = 0; i < vetorC.Length; i++)
+            {
+                for (int l = i; l < vetorC.Length - 1; l++)
+                {
+                    if (vetorA[i] == vetorB[l])
+                    {
+                        vetorC[i] = vetorA[i];
+                    }
+                }
+                Console.Write($"{i}º: {vetorA[i].ToString("0,0")}  |  {vetorB[i].ToString("0,0")}  |  ");
+
+                if (vetorC[i] != 0)
+                {
+                    Console.Write($"{ vetorC[i].ToString("0,0")}");
+                }
+                Console.WriteLine();
+
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 31  ???? FALTA FAZER
+#region
+#endRegion
+
+// EXERCICIO 32  ???? FALTA FAZER
+#region
+#endRegion
+
+// EXERCICIO 33
+#region
+#endRegion
+
+// EXERCICIO 34  CONFERIR
+#region
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] vetor = new int[5];
+            int i = 0;
+            PegaNumeros(i, vetor);
+                         
+            Console.ReadKey();
+        }
+
+        static void PegaNumeros(int i, int[] vetor)
+        {
+            
+            
+            for (int ind = i; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º: ");
+                vetor[i] = int.Parse(Console.ReadLine());
+                int verificar = vetor[i];
+                VerificaSeJaFoiDigitado(vetor,verificar, i);
+            }
+        }
+
+        static void VerificaSeJaFoiDigitado(int[] vetor, int verificar, int indice)
+        {
+            for (int i = 0; i < indice; i++)
+            {
+                if (vetor[i] == verificar)
+                {
+                    Console.WriteLine("Esse numero ja existe no vetor\nDigite um numero diferente\nAperte um tecla pra continuar!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    for (int l = 0; l < indice; l++)
+                    {
+                        Console.WriteLine($"{l}º: {vetor[l]}");
+                    }
+                    PegaNumeros(indice, vetor);
+                }
+            }
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 35
+#region
+#endRegion
+
+// EXERCICIO 36
+#region
+#endRegion
+
+// EXERCICIO 37
+#region
+#endRegion
+
+// EXERCICIO 38
+#region
+#endRegion
+
+// EXERCICIO 39
+#region
+#endRegion
+
+// EXERCICIO 40
+#region
+#endRegion
