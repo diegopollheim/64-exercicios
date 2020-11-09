@@ -1323,7 +1323,7 @@ namespace _64_EXERCICIOS
 #region
 #endRegion
 
-// EXERCICIO 34  CONFERIR
+// EXERCICIO 34  CONFERIR A ULTIMA POSICAO DO INDICE
 #region
 using System;
 using System.Collections.Generic;
@@ -1341,14 +1341,23 @@ namespace _64_EXERCICIOS
             int[] vetor = new int[5];
             int i = 0;
             PegaNumeros(i, vetor);
+            EscreveVetor(vetor);
                          
             Console.ReadKey();
         }
 
-        static void PegaNumeros(int i, int[] vetor)
+        private static void EscreveVetor(int[] vetor)
         {
-            
-            
+            Console.Clear();
+            Console.WriteLine("Valores do VETOR");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Console.Write($"{i}º - {vetor[i]}\n");
+            }
+        }
+
+        static void PegaNumeros(int i, int[] vetor)
+        {         
             for (int ind = i; i < vetor.Length; i++)
             {
                 Console.Write($"{i}º: ");
@@ -1379,7 +1388,7 @@ namespace _64_EXERCICIOS
 }
 #endRegion
 
-// EXERCICIO 35
+// EXERCICIO 35  ???? FALTA FAZER
 #region
 #endRegion
 
@@ -1399,6 +1408,6 @@ namespace _64_EXERCICIOS
 #region
 #endRegion
 
-// EXERCICIO 40  LINHA ALTERADA
+// EXERCICIO 40
 #region
 #endRegion
