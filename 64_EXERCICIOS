@@ -1486,13 +1486,11 @@ namespace _64_EXERCICIOS
     {
         static void Main(string[] args)
         {
-
-
             //PegarValores(matriz);
             //MostraMatriz(matriz);
-            Console.Write("Digite um numero de entre 5 e 10: ");
-            int numero = int.Parse(Console.ReadLine());
-
+            Console.Write("Digite um numero de entre 5 e 10:\n\n");
+            //int numero = int.Parse(Console.ReadLine());
+            int numero = 6;
             int[,] matriz = new int[numero, numero];
             
             MostraTrianguloPascal(matriz, numero);
@@ -1527,16 +1525,26 @@ namespace _64_EXERCICIOS
 
         static void MostraTrianguloPascal(int[,] matriz, int numero)
         {
-            for (int l = 0; l <= numero; l++)
+            for (int l = 0; l <= numero - 1; l++)
             {                
-                for (int c = 0; c <= numero; c++)
-                { 
+                for (int c = 0; c <= numero - 1; c++)
+                {
                     if (l >= c)
-                    {                      
-                        //int aux = l;
-                        //l = 1;
-                        Console.Write($" {l} ");
-                        //l = aux;                       
+                    {
+                        if (c == 0 || l == c)
+                        {
+                            int aux = l;
+                            l = 1;
+                            Console.Write($" {l} ");
+                            l = aux;
+                        }
+                        else
+                        {
+                            int aux = l;
+                            l = c - 1 + l;
+                            Console.Write($" {l} ");
+                            l = aux;
+                        }
                     }
                 }
                 Console.WriteLine("\n");
