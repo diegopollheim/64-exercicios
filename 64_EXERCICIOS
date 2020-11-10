@@ -1623,12 +1623,12 @@ namespace _64_EXERCICIOS
     {
         static void Main(string[] args)
         {
-            int[,] matriz = new int[4, 4];
+            int[,] matriz = new int[5, 5];
 
             Console.WriteLine(" \n MATRIZ 5X5 \n");
-            for (int l = 0; l < 4; l++)
+            for (int l = 0; l < 5; l++)
             {
-                for (int c = 0; c < 4; c++)
+                for (int c = 0; c < 5; c++)
                 {
                     if (l == c)
                     {
