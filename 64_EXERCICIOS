@@ -1609,7 +1609,44 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 02
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[4, 4];
+
+            Console.WriteLine(" \n MATRIZ 5X5 \n");
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    if (l == c)
+                    {
+                        matriz[l, c] = 1;
+                    }
+                    else
+                    {
+                        matriz[l, c] = 0;
+                    }
+                    Console.Write($" {matriz[l, c]} ");
+                }
+                Console.WriteLine("\n");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 03
