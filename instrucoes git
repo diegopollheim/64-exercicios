@@ -13,6 +13,12 @@ git commit -m "Comentário do Commit"
 adicionar repositório remoto
 git add remote <apelido do repositorio> <link do repositorio>
 
+Enviar alteracoes para o repositorio remoto
+git push <apelido do repositorio remoto>
+
+buscar alteracoes do repositorio remoto
+git pull <apelido do repositorio remoto>
+
 Clonar um repositório
 git clone <Link do repositótio>
 
