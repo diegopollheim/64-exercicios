@@ -1625,7 +1625,7 @@ namespace _64_EXERCICIOS
         {
             int[,] matriz = new int[5, 5];
 
-            Console.WriteLine(" \n MATRIZ 5X5 \n");
+            Console.WriteLine(" \n  MATRIZ 5X5 \n");
             for (int l = 0; l < 5; l++)
             {
                 for (int c = 0; c < 5; c++)
@@ -1638,7 +1638,17 @@ namespace _64_EXERCICIOS
                     {
                         matriz[l, c] = 0;
                     }
-                    Console.Write($" {matriz[l, c]} ");
+
+                    if (matriz[l, c] == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write($" {matriz[l, c]} ");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write($" {matriz[l, c]} ");
+                    }
                 }
                 Console.WriteLine("\n");
             }
