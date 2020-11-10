@@ -1,9 +1,9 @@
 
 Setar Nome e Email
 git config --global user.name "Diego Pollheim"
-git config --global user.email "diegopollheim"
+git config --global user.email "diegopollheim@gmail.com"
 
-Inicializar um Repositório Local
+Inicializar um Repositório Local (inicializar dentro da pasta)
 git init
 
 Comitar
@@ -14,7 +14,7 @@ adicionar repositório remoto
 git add remote <apelido do repositorio> <link do repositorio>
 
 Clonar um repositório
-git clone <Link do repoitótio>
+git clone <Link do repositótio>
 
 
 
