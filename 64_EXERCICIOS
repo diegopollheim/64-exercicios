@@ -1462,11 +1462,11 @@ namespace _64_EXERCICIOS
 }
 #endRegion
 
-// EXERCICIO 37
+// EXERCICIO 37  ???? FALTA FAZER
 #region
 #endRegion
 
-// EXERCICIO 38
+// EXERCICIO 38  ???? FALTA FAZER
 #region
 #endRegion
 
@@ -1557,4 +1557,97 @@ namespace _64_EXERCICIOS
 // MATRIZES 
 // EXERCICIO 01
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[4, 4];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+            Random num = new Random();
+            string numerosMaioresQueDez = "";
+            int maiores = 0;
+
+            Console.WriteLine(" \n   MATRIZ 4X4  \n");
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    matriz[l, c] = num.Next(0, 99);
+                    if (matriz[l,c] > 10)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        maiores++;
+                        numerosMaioresQueDez += $"{matriz[l,c]},";
+                    }
+                    Console.Write($" {matriz[l,c].ToString("0,0")} ");
+                    Console.ResetColor();
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine($"{maiores} numeros maiores que 10: {numerosMaioresQueDez}");
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 02
+#region
+
+#endRegion
+
+// EXERCICIO 03
+#region
+
+#endRegion
+
+// EXERCICIO 04
+#region
+
+#endRegion
+
+// EXERCICIO 05
+#region
+
+#endRegion
+
+// EXERCICIO 06
+#region
+
+#endRegion
+
+// EXERCICIO 07
+#region
+
+#endRegion
+
+// EXERCICIO 08
+#region
+
+#endRegion
+
+// EXERCICIO 09
+#region
+
+#endRegion
+
+// EXERCICIO 10
+#region
+
 #endRegion
