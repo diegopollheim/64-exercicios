@@ -1,0 +1,20 @@
+
+Setar Nome e Email
+git config --global user.name "Diego Pollheim"
+git config --global user.email "diegopollheim"
+
+Inicializar um Repositório Local
+git init
+
+Comitar
+git add *
+git commit -m "Comentário do Commit"
+
+adicionar repositório remoto
+git add remote <apelido do repositorio> <link do repositorio>
+
+Clonar um repositório
+git clone <Link do repoitótio>
+
+
+
