@@ -1818,19 +1818,68 @@ namespace _64_EXERCICIOS
 }
 #endRegion
 
-// EXERCICIO 06
+// EXERCICIO 06  FALTA FAZER
 #region
 
 #endRegion
 
-// EXERCICIO 07
+// EXERCICIO 07  FALTA FAZER
 #region
 
 #endRegion
 
 // EXERCICIO 08
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[3, 3];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+            Random num = new Random();
+            int res = 0;
+
+            Console.WriteLine("\nTRIÂNGULO SUPERIOR  \n");
+            for (int l = 0; l < 3; l++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    matriz[l, c] = num.Next(0, 10);
+
+                    if (l < c)
+                    {
+                        Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                        res += matriz[l, c];
+                    }
+                    else
+                    {
+                        Console.Write($"    ");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+
+            Console.WriteLine($"Soma do triângulo superior: {res}");
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 09
