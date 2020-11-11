@@ -1938,5 +1938,104 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 10
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[3, 3];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+            Random num = new Random();
+            int res = 0;
+
+            Console.WriteLine("\nDIAGONAL PRINCIPAL  \n");
+            for (int l = 0; l < 3; l++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    matriz[l, c] = num.Next(0, 10);
+
+                    if (l == c)
+                    {
+                        Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                        res += matriz[l, c];
+                    }
+                    else
+                    {
+                        Console.Write($"    ");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+
+            Console.WriteLine($"Soma da diagonal principal: {res}");
+        }
+    }
+}
+#endRegion
+
+// EXERCICIO 11
+#region
+
+#endRegion
+
+// EXERCICIO 12
+#region
+
+#endRegion
+
+// EXERCICIO 13
+#region
+
+#endRegion
+
+// EXERCICIO 14
+#region
+
+#endRegion
+
+// EXERCICIO 15
+#region
+
+#endRegion
+
+// EXERCICIO 16
+#region
+
+#endRegion
+
+// EXERCICIO 17
+#region
+
+#endRegion
+
+// EXERCICIO 18
+#region
+
+#endRegion
+
+// EXERCICIO 19
+#region
+
+#endRegion
+
+// EXERCICIO 20
+#region
 
 #endRegion
