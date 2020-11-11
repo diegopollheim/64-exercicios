@@ -1666,7 +1666,59 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 04
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[4, 4];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+            Random num = new Random();
+            string posMaior = "";
+            int maiorNumero = 0;
+            string t = "AI";
+
+            Console.WriteLine(" \n   MATRIZ 4X4  \n");
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    matriz[l, c] = num.Next(0, 99);
+
+                    if (matriz[l, c] > maiorNumero)
+                    {
+                        maiorNumero = matriz[l, c];
+                        posMaior = $" Posição do Maior Valor\n Linha: {l}\n Coluna: {c}";
+                        Console.Write($" {maiorNumero.ToString("0,0")} ");
+                    }
+                    else
+                    {
+                        Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine(posMaior);
+            
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 05
