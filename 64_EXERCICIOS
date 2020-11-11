@@ -1990,19 +1990,84 @@ namespace _64_EXERCICIOS
 }
 #endRegion
 
-// EXERCICIO 11
+// EXERCICIO 11  ???? FALTA FAZER
 #region
 
 #endRegion
 
-// EXERCICIO 12
+// EXERCICIO 12  ???? FALTA FAZER
 #region
 
 #endRegion
 
 // EXERCICIO 13
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[4, 4];
+            Random num = new Random();
+
+            MostrarMatriz(matriz, num);
+            TrianguloInferior(matriz, num);
+
+            Console.ReadKey();
+        }
+
+        private static void TrianguloInferior(int[,] matriz, Random num)
+        {
+            Console.WriteLine("\nDIAGONAL PRINCIPAL");
+            Console.WriteLine("TRIANGULO INFERIOR  \n");
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    matriz[l, c] = num.Next(1, 20);
+
+                    if (l >= c)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                        Console.ResetColor();                        
+                    }
+                    else
+                    {
+                        matriz[l, c] = 0;
+                        Console.Write($" {matriz[l,c].ToString("0,0")} ");
+                    }
+                }
+                Console.WriteLine("\n");
+            }           
+        }
+
+        private static void MostrarMatriz(int[,] matriz, Random num)
+        {
+            Console.WriteLine("\n   MATRIZ 4X4\n");
+            
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    matriz[l, c] = num.Next(1, 20);
+                    Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine("_________________");
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 14
