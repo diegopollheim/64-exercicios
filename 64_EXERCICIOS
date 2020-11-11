@@ -1661,7 +1661,43 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 03
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[4, 4];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+                      
+            Console.WriteLine(" \n     MATRIZ 4X4  \n");
+            for (int l = 0; l < 4; l++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    string aux = $"{l},{c}";                    
+                    Console.Write($" {aux} ");
+                }
+                Console.WriteLine("\n");
+            }
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 04
