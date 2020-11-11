@@ -1692,7 +1692,6 @@ namespace _64_EXERCICIOS
             Random num = new Random();
             string posMaior = "";
             int maiorNumero = 0;
-            string t = "AI";
 
             Console.WriteLine(" \n   MATRIZ 4X4  \n");
             for (int l = 0; l < 4; l++)
@@ -1709,6 +1708,7 @@ namespace _64_EXERCICIOS
                     }
                     else
                     {
+                        
                         Console.Write($" {matriz[l, c].ToString("0,0")} ");
                     }
                 }
