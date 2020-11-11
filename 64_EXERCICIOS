@@ -1786,6 +1786,7 @@ namespace _64_EXERCICIOS
         {
             Random num = new Random();
             string posNumeroProcurado = "";
+            bool encontrado = false;
                       
             Console.WriteLine(" \n     MATRIZ 5X5  \n");
             for (int l = 0; l < 5; l++)
@@ -1796,14 +1797,22 @@ namespace _64_EXERCICIOS
 
                     if (matriz[l, c] == numero)
                     {
+                        encontrado = true;
                         posNumeroProcurado += $" Linha: {l} \n Coluna: {c} \n\n";
                     }
-                                    
+                    
                     Console.Write($" {matriz[l,c].ToString("0,0")} ");
                 }
                 Console.WriteLine("\n");
             }
-            Console.WriteLine(posNumeroProcurado);
+            if (encontrado)
+            {
+                Console.WriteLine(posNumeroProcurado);
+            }
+            else
+            {
+                Console.WriteLine(" NUMERO NAO ENCONTRADO");
+            }
         }
     }
 }
