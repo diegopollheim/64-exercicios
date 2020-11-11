@@ -1759,7 +1759,54 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 05
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[5, 5];
+            Console.Write("Digite um numero: ");
+            int numero = int.Parse(Console.ReadLine());
+
+            MostrarMatriz(matriz, numero);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz, int numero)
+        {
+            Random num = new Random();
+            string posNumeroProcurado = "";
+                      
+            Console.WriteLine(" \n     MATRIZ 5X5  \n");
+            for (int l = 0; l < 5; l++)
+            {
+                for (int c = 0; c < 5; c++)
+                {
+                    matriz[l,c] = num.Next(0,15);                    
+
+                    if (matriz[l, c] == numero)
+                    {
+                        posNumeroProcurado += $" Linha: {l} \n Coluna: {c} \n\n";
+                    }
+                                    
+                    Console.Write($" {matriz[l,c].ToString("0,0")} ");
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine(posNumeroProcurado);
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 06
