@@ -2072,10 +2072,53 @@ namespace _64_EXERCICIOS
 
 // EXERCICIO 14
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[5, 5];
+            Random num = new Random();
+
+            InicioBingo(matriz, num);
+
+            Console.ReadKey();
+        }
+
+        private static void InicioBingo(int[,] matriz, Random num)
+        {
+            Console.WriteLine("\n        BINGO \n");
+
+            for (int l = 0; l < 5; l++)
+            {
+                for (int c = 0; c < 5; c++)
+                {
+                    //string vazio = "XX";
+                    //Console.Write($" {vazio.ToString()} ");
+                    matriz[l,c] = num.Next(1, 25);
+
+                    Console.Write($" {matriz[l,c].ToString("0,0")} ");
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine("____________________");        
+        }
+
+        
+    }
+}
 #endRegion
 
-// EXERCICIO 15
+// EXERCICIO 15  ???? FALTA FAZER
 #region
 
 #endRegion
