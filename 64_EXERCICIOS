@@ -2123,19 +2123,67 @@ namespace _64_EXERCICIOS
 
 #endRegion
 
-// EXERCICIO 16
+// EXERCICIO 16  ???? FALTA FAZER
 #region
 
 #endRegion
 
-// EXERCICIO 17
+// EXERCICIO 17  ???? FALTA FAZER
 #region
 
 #endRegion
 
 // EXERCICIO 18
 #region
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace _64_EXERCICIOS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matriz = new int[3, 3];
+
+            MostrarMatriz(matriz);
+
+            Console.ReadKey();
+        }
+
+        private static void MostrarMatriz(int[,] matriz)
+        {
+            Random num = new Random();
+            int[] somaColunas = new int[3];
+
+            Console.WriteLine("\n MATRIZ 3X3 \n");
+            for (int l = 0; l < 3; l++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    matriz[l, c] = num.Next(0, 10);
+                    Console.Write($" {matriz[l, c].ToString("0,0")} ");
+    
+                    somaColunas[c] += matriz[l, c];
+                    
+                }
+                Console.WriteLine("\n");
+            }
+
+            Console.WriteLine("Soma das Colunas");
+            Console.WriteLine("________________\n");
+            for (int i = 0; i < somaColunas.Length; i++)
+            {
+                Console.Write($" {somaColunas[i]}, ");
+            }
+        }
+    }
+}
 #endRegion
 
 // EXERCICIO 19
