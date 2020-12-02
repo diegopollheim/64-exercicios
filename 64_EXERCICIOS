@@ -2291,6 +2291,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -2312,26 +2313,32 @@ namespace _64_EXERCICIOS
         {
             Random num = new Random();
             int somaImpares = 0;
+            int mediaAritmetica = 0; 
 
             Console.WriteLine("\n MATRIZ 3X6  \n");
             for (int l = 0; l < 3; l++)
             {
                 for (int c = 0; c < 6; c++)
                 {
-                    matriz[l, c] = num.Next(0, 10);
-                    Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                    matriz[l, c] = num.Next(0, 50);
                     if (c % 2 != 0)
                     {
                         somaImpares += matriz[l, c];
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                    Console.ResetColor();
+                    
+                    if (c == 1 || c == 3)
+                    {
+                        mediaAritmetica += matriz[l, c];
                     }
                 }
                 Console.WriteLine("\n");
             }
-
-            Console.WriteLine($" a) Soma dos elementos das Colunas Impares: {somaImpares}");
-            Console.WriteLine($" b) Média aritmética dos elementos da segunda e quarta coluna: ");
-            
-            Console.WriteLine("\n MATRIZ MODIFICADA \n");
+            mediaAritmetica /= 6;
+                        
+            Console.WriteLine("\n MATRIZ MODIFICADA (sexta coluna recebendo a soma dos valores da 1ª e 2ª coluna)\n");
 
             for (int l = 0; l < 3; l++)
             {
@@ -2339,12 +2346,20 @@ namespace _64_EXERCICIOS
                 {
                     if (c == 5)
                     {
-                        matriz[l, c] = matriz[l, 1] + matriz[l, 2];
+                        matriz[l, c] = matriz[l, 0] + matriz[l, 1];
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    if (c == 0 || c == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
                     }
                     Console.Write($" {matriz[l, c].ToString("0,0")} ");
+                    Console.ResetColor();
                 }
                 Console.WriteLine("\n");
             }
+            Console.WriteLine($" a) Soma dos elementos das Colunas Impares: {somaImpares}");
+            Console.WriteLine($" b) Média aritmética dos elementos da segunda e quarta coluna: {mediaAritmetica.ToString("n1")}");
         }
     }
 }
